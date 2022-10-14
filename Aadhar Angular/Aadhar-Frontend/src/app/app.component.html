@@ -1,0 +1,25 @@
+<div class="container">
+    <div class="row">
+      <div class="col">
+        <ul class="nav nav-tabs">
+          <li
+            role="presentation"
+            class="nav-item"
+            routerLinkActive="Active"
+            [routerLinkActiveOptions]="{ exact: true }"
+          >
+            <a class="nav-link" routerLink="/">Home</a>
+          </li>
+          <!-- <li role="presentation" class="nav-item" routerLinkActive="Active">
+            <a href="" class="nav-link" routerLink="admin">Admin</a>
+          </li> -->
+        </ul>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </div>
+  

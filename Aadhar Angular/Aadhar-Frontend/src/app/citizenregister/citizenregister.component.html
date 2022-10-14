@@ -1,0 +1,145 @@
+<div class="container">
+    <h3 class="text-center m-3">Citizen Registration</h3>
+    <form #f="ngForm">
+      <div class="row m-3 justify-content-center">
+        <div class="form-group w-50">
+          <label for="name"></label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            class="form-control"
+            placeholder="Name"
+            required
+            ngModel
+            #name="ngModel"
+          />
+        </div>
+      </div>
+      <div class="row m-3 justify-content-center">
+        <div class="form-group w-50">
+          <label for="dob"></label>
+          <input
+            type="text"
+            id="dob"
+            name="dob"
+            class="form-control"
+            placeholder="DOB"
+            required
+            ngModel
+            dob
+            #dob="ngModel"
+          />
+          <span
+            id="err-dob"
+            style="color: red"
+            class="small"
+            *ngIf="!dob.valid && dob.touched"
+            >Please enter a valid dob</span
+          >
+        </div>
+      </div>
+      <div class="row m-3 justify-content-center">
+        <div class="form-group w-50">
+          <label for="emailid"></label>
+          <input
+            type="text"
+            id="emailid"
+            name="emailid"
+            class="form-control"
+            placeholder="Email Id"
+            required
+            ngModel
+            emailid
+            #emailid="ngModel"
+          />
+          <span
+            id="err-email"
+            style="color: red"
+            class="small"
+            *ngIf="!emailid.valid && emailid.touched"
+            >Please enter a valid email</span
+          >
+        </div>
+      </div>
+      <div class="row m-3 justify-content-center">
+        <div class="form-group w-50">
+          <label for="address"></label>
+          <textarea
+            type="text"
+            id="address"
+            name="address"
+            class="form-control"
+            placeholder="Address"
+            required
+            ngModel
+            address
+            #address="ngModel"
+          ></textarea>
+          <span
+            id="err-address"
+            style="color: red"
+            class="small"
+            *ngIf="!address.valid && address.touched"
+            >Please enter a valid address</span
+          >
+        </div>
+      </div>
+      <div class="row m-3 justify-content-center">
+        <div class="form-group w-50">
+          <label for="number"></label>
+          <input
+            type="text"
+            id="number"
+            name="number"
+            class="form-control"
+            placeholder="Number"
+            required
+            ngModel
+            number
+            #number="ngModel"
+          />
+          <span
+            id="err-number"
+            style="color: red"
+            class="small"
+            *ngIf="!number.valid && number.touched"
+            >Please enter a valid Mobile Number</span
+          >
+        </div>
+      </div>
+      <div class="row m-3 justify-content-center">
+        <div class="form-group w-50">
+          <label for="gender"></label>
+          <input
+            type="text"
+            id="gender"
+            name="gender"
+            class="form-control"
+            placeholder="Gender"
+            required
+            ngModel
+            gender
+            #gender="ngModel"
+          />
+          <span
+            id="err-gender"
+            style="color: red"
+            class="small"
+            *ngIf="!gender.valid && gender.touched"
+            >Please enter a valid Gender</span
+          >
+        </div>
+      </div>
+        
+        <div class="row m-3 justify-content-center">
+          <div class="form-group w-50">
+            <button class="btn btn-primary w-100" [disabled]="!f.valid" (click)="onAddCitizen(f.value, f)" id="register">Register</button>
+          </div>
+        </div>
+    </form>
+    
+  </div>
+  
+  
+  

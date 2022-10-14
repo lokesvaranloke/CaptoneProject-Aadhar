@@ -1,0 +1,38 @@
+<div class="image">
+    <div>
+      <h1 class="d-flex justify-content-center" style="color: crimson">
+        AADHAR APPLICATION
+      </h1>
+    </div>
+    <div class="container">
+      <button class="btn btn-outline-danger mt-5" (click)="onFetchCitizens()">
+        View All
+      </button>
+      <div class="row m-3">
+        <div class="col">
+          <p *ngIf="fetchedCitizens.length < 1">No Users Available !!</p>
+          <ul class="list-group" *ngIf="fetchedCitizens.length >= 1">
+            <li class="list-group-item" *ngFor="let citizen of fetchedCitizens">
+              <p><b>Aadhar id:</b>&nbsp;{{ citizen.citizenid }}</p>
+              <p><b>Name&nbsp;:</b>&nbsp;{{ citizen.name }}</p>
+              <p><b>Date Of Birth:</b>&nbsp;{{ citizen.dob }}</p>
+              <p><b>Email:</b>&nbsp;{{ citizen.emailid }}</p>
+  
+              <p><b>Address:</b>&nbsp;{{ citizen.address }}</p>
+              <p><b>Mobile No:</b>&nbsp;{{ citizen.number }}</p>
+  
+              <p><b>Gender:</b>&nbsp;{{ citizen.gender }}</p>
+  
+              <button
+                class="btn btn-sm btn-danger"
+                (click)="onDeleteCitizen(citizen.citizenid)"
+              >
+                Delete
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  
